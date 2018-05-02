@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 public class DBHelper extends SQLiteOpenHelper {
 
@@ -22,8 +23,6 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-//        String createTable = "CREATE TABLE " + TABLE_NAME + "(id integer primary key," +  COL2 + " text, " + COL3 + " ,text, " + COL4 + " text)";
-
         String createTable = "CREATE TABLE " + TABLE_NAME + "(" + COL1
                 + " INTEGER PRIMARY KEY AUTOINCREMENT," + COL2
                 + " TEXT NOT NULL," + COL3
@@ -42,81 +41,44 @@ public class DBHelper extends SQLiteOpenHelper {
     public boolean addSignupData(String fname, String password, String email) {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        String query = "select  * from " + TABLE_NAME ;
+        String query = "select  * from " + TABLE_NAME;
+        String checkEmail = "select email from " + TABLE_NAME + " WHERE email = '" + email + "'";
         Cursor cursor = sqLiteDatabase.rawQuery(query, null);
+        Cursor c =  sqLiteDatabase.rawQuery(checkEmail, null);
         int count = cursor.getCount() + 1;
 
-        contentValues.put(COL1, count);
-        contentValues.put(COL2, email);
-        contentValues.put(COL3, fname);
-        contentValues.put(COL4, password);
-
-        long result = sqLiteDatabase.insert(TABLE_NAME, null, contentValues);
-
-        if (result == -1) {
-            return false;
+        if (!(c.getCount() > 0)){
+            contentValues.put(COL1, count);
+            contentValues.put(COL2, email);
+            contentValues.put(COL3, fname);
+            contentValues.put(COL4, password);
+            long result = sqLiteDatabase.insert(TABLE_NAME, null, contentValues);
+            if (result == -1) {
+                return false;
+            } else {
+                return true;
+            }
         } else {
-            return true;
+            return false;
         }
     }
 
-//    public Cursor getData(){
-//        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-//        String query = "SELECT " + COL2 + " FROM " + TABLE_NAME;
-//        Cursor data = sqLiteDatabase.rawQuery(query,null);
-//        return data;
-//    }
-//
-//    public long getUserCount() {
-//        return getData().getCount();
-//    }
+    public boolean checkLogin(String email, String password) {
+        boolean isPresent = false;
 
-//    public int getTotal(){
-//        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-//        String query = "SELECT " + COL1 + " FROM " + TABLE_NAME;
-//        Cursor data = sqLiteDatabase.rawQuery(query,null);
-//        return data.getCount();
-//    }
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "SELECT " + COL2 + ", " + COL4 + " FROM " + TABLE_NAME + " WHERE "+ COL2 + " = '" + email + "' AND " + COL4 + " = '" + password + "'";
 
-//    public List<Weights> getWeights(){
-//        List<Weights> WD = new ArrayList<>();
-//
-//
-//        SQLiteDatabase db = this.getWritableDatabase();
-//        String q = "SELECT weight FROM weight_history WHERE 1 ORDER BY ID ASC;";
-//
-//        Cursor c = db.rawQuery(q, null);
-//        if(c.getCount() == 0){
-//            return null;
-//        }
-//        Weights Wdata = null;
-//        if (c.moveToFirst()) {
-//            do {
-//                Wdata = new Weights();
-//                int weigthx = c.getInt(c.getColumnIndex("weight"));
-//
-//
-//                Wdata.setWeight(weigthx);
-//
-//                WD.add(Wdata);
-//
-//            } while (c.moveToNext());
-//        }
-//        db.close();
-//
-//        return WD;
-//    }
-//
-//    public class Weights {
-//        public int weight;
-//
-//        public void setWeight(int weight){
-//            this.weight = weight;
-//        }
-//
-//        public int getWeight(){
-//            return weight;
-//        }
-//    }
+        Cursor c = db.rawQuery(query, null);
+
+        if (c.getCount() >= 1) {
+            isPresent = true;
+            Log.d("login", "authenticated");
+        } else {
+            isPresent = false;
+            Log.d("login", "didn't authenticate");
+        }
+        return isPresent;
+    }
 
 }

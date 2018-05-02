@@ -23,9 +23,7 @@ public class SignupActivity extends AppCompatActivity {
 
     private Intent i;
 
-    DBHelper dbHelper;
-
-    AlertDialog.Builder alert;
+    private DBHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +54,11 @@ public class SignupActivity extends AppCompatActivity {
                         i = new Intent(getApplicationContext(), MainActivity.class);
                         startActivity(i);
                         finish();
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Email has already been takne", Toast.LENGTH_LONG).show();
                     }
+                } else{
+                    Toast.makeText(getApplicationContext(), "Problem with form", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -66,6 +68,7 @@ public class SignupActivity extends AppCompatActivity {
             public void onClick(View v) {
                 i = new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(i);
+                finish();
             }
         });
     }
