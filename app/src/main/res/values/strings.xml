@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">InventoryApp</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="submit">Submit</string>
+    <string name="inventory_app">Inventory App</string>
+    <string name="hint_email">Enter Email</string>
+    <string name="hint_password">Enter Password</string>
+    <string name="full_name">Full Name</string>
+    <string name="register_link">Go to sign up</string>
+    <string name="login_hint">Go to login</string>
+    <string name="confirm">Confirm Password</string>
+</resources>
