@@ -1,4 +1,8 @@
-package com.timbau3285.myinventory;
+package com.timbau3285.myinventory.database;
+
+/**
+ * Created by Polygod on 5/2/18.
+ */
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -7,17 +11,17 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-public class DBHelper extends SQLiteOpenHelper {
+public class Item extends SQLiteOpenHelper {
 
     private static final String TAG = "DatabaseHelper";
 
-    private static final String TABLE_NAME = "user";
-    private static final String COL1 = "ID";
-    private static final String COL2 = "email";
-    private static final String COL3 = "full_name";
-    private static final String COL4 = "password";
+    private static final String TABLE_NAME = "item";
+    private static final String COL1 = "name";
+    private static final String COL2 = "price";
+    private static final String COL3 = "quantity";
+    private static final String COL4 = "";
 
-    public DBHelper(Context context) {
+    public Item(Context context) {
         super(context, TABLE_NAME, null, 1);
     }
 

@@ -1,4 +1,4 @@
-package com.timbau3285.myinventory;
+package com.timbau3285.myinventory.database;
 
 
 import android.content.Context;

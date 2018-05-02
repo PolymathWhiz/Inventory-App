@@ -1,8 +1,11 @@
-package com.timbau3285.myinventory;
+package com.timbau3285.myinventory.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.timbau3285.myinventory.R;
+import com.timbau3285.myinventory.database.SharedPreference;
 
 public class MainActivity extends AppCompatActivity {
 
