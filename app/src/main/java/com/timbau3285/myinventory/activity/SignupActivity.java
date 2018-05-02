@@ -57,7 +57,7 @@ public class SignupActivity extends AppCompatActivity {
                         startActivity(i);
                         finish();
                     } else {
-                        Toast.makeText(getApplicationContext(), "Email has already been takne", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Email has already been taken", Toast.LENGTH_LONG).show();
                     }
                 } else{
                     Toast.makeText(getApplicationContext(), "Problem with form", Toast.LENGTH_SHORT).show();

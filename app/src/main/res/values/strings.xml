@@ -12,4 +12,13 @@
     <string name="register_link">Go to sign up</string>
     <string name="login_hint">Go to login</string>
     <string name="confirm">Confirm Password</string>
+    <string name="add_item">Add Item</string>
+    <string name="hint_item_name">Item Name</string>
+    <string name="hint_item_price">Item Price</string>
+    <string name="hint_item_quantitu">Item Quantity</string>
+    <string name="save">Save</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+    <string name="exit">Exit</string>
+    <string name="logout">Logout</string>
 </resources>
