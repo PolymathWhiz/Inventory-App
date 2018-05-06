@@ -126,109 +126,109 @@ public class MainActivity extends AppCompatActivity {
         adapter.swapCursor(dbHelper.readStock());
     }
 
-    /**
-     * Add data for demo purposes
-     */
-    private void addDummyData() {
-        StockItem gummibears = new StockItem(
-                "Gummibears",
-                "10 €",
-                45,
-                "Haribo GmbH",
-                "+49 000 000 0000",
-                "haribo@sweet.com",
-                "android.resource://eu.laramartin.inventorymanager/drawable/gummibear");
-        dbHelper.insertItem(gummibears);
-
-        StockItem peaches = new StockItem(
-                "Peaches",
-                "10 €",
-                24,
-                "Haribo GmbH",
-                "+49 000 000 0000",
-                "haribo@sweet.com",
-                "android.resource://eu.laramartin.inventorymanager/drawable/peach");
-        dbHelper.insertItem(peaches);
-
-        StockItem cherries = new StockItem(
-                "Cherries",
-                "11 €",
-                74,
-                "Haribo GmbH",
-                "+49 000 000 0000",
-                "haribo@sweet.com",
-                "android.resource://eu.laramartin.inventorymanager/drawable/cherry");
-        dbHelper.insertItem(cherries);
-
-        StockItem cola = new StockItem(
-                "Cola",
-                "13 €",
-                44,
-                "Haribo GmbH",
-                "+49 000 000 0000",
-                "haribo@sweet.com",
-                "android.resource://eu.laramartin.inventorymanager/drawable/cola");
-        dbHelper.insertItem(cola);
-
-        StockItem fruitSalad = new StockItem(
-                "Fruit salad",
-                "20 €",
-                34,
-                "Haribo GmbH",
-                "+49 000 000 0000",
-                "haribo@sweet.com",
-                "android.resource://eu.laramartin.inventorymanager/drawable/fruit_salad");
-        dbHelper.insertItem(fruitSalad);
-
-        StockItem smurfs = new StockItem(
-                "Smurfs",
-                "12 €",
-                26,
-                "Haribo GmbH",
-                "+49 000 000 0000",
-                "haribo@sweet.com",
-                "android.resource://eu.laramartin.inventorymanager/drawable/smurfs");
-        dbHelper.insertItem(smurfs);
-
-        StockItem fresquito = new StockItem(
-                "Fresquito",
-                "9 €",
-                54,
-                "Fiesta S.A.",
-                "+34 000 000 0000",
-                "fiesta@dulce.com",
-                "android.resource://eu.laramartin.inventorymanager/drawable/fresquito");
-        dbHelper.insertItem(fresquito);
-
-        StockItem hotChillies = new StockItem(
-                "Hot chillies",
-                "13 €",
-                12,
-                "Fiesta S.A.",
-                "+34 000 000 0000",
-                "fiesta@dulce.com",
-                "android.resource://eu.laramartin.inventorymanager/drawable/hot_chillies");
-        dbHelper.insertItem(hotChillies);
-
-        StockItem lolipopStrawberry = new StockItem(
-                "Lolipop strawberry",
-                "12 €",
-                62,
-                "Fiesta S.A.",
-                "+34 000 000 0000",
-                "fiesta@dulce.com",
-                "android.resource://eu.laramartin.inventorymanager/drawable/lolipop");
-        dbHelper.insertItem(lolipopStrawberry);
-
-        StockItem heartGummy = new StockItem(
-                "Heart gummy jellies",
-                "13 €",
-                22,
-                "Fiesta S.A.",
-                "+34 000 000 0000",
-                "fiesta@dulce.com",
-                "android.resource://eu.laramartin.inventorymanager/drawable/heart_gummy");
-        dbHelper.insertItem(heartGummy);
-    }
+//    /**
+//     * Add data for demo purposes
+//     */
+//    private void addDummyData() {
+//        StockItem gummibears = new StockItem(
+//                "Gummibears",
+//                "10 $",
+//                45,
+//                "Haribo GmbH",
+//                "+49 000 000 0000",
+//                "haribo@sweet.com",
+//                "android.resource://com.timbau3285.myinventory/drawable-xxxhdpi/gummibear");
+//        dbHelper.insertItem(gummibears);
+//
+//        StockItem peaches = new StockItem(
+//                "Peaches",
+//                "10 €",
+//                24,
+//                "Haribo GmbH",
+//                "+49 000 000 0000",
+//                "haribo@sweet.com",
+//                "android.resource://com.timbau3285.myinventory/drawable-xxxhdpi/peach");
+//        dbHelper.insertItem(peaches);
+//
+//        StockItem cherries = new StockItem(
+//                "Cherries",
+//                "11 €",
+//                74,
+//                "Haribo GmbH",
+//                "+49 000 000 0000",
+//                "haribo@sweet.com",
+//                "android.resource://com.timbau3285.myinventory/drawable-xxxhdpi/cherry");
+//        dbHelper.insertItem(cherries);
+//
+//        StockItem cola = new StockItem(
+//                "Cola",
+//                "13 €",
+//                44,
+//                "Haribo GmbH",
+//                "+49 000 000 0000",
+//                "haribo@sweet.com",
+//                "android.resource://com.timbau3285.myinventory/drawable-xxxhdpi/cola");
+//        dbHelper.insertItem(cola);
+//
+//        StockItem fruitSalad = new StockItem(
+//                "Fruit salad",
+//                "20 €",
+//                34,
+//                "Haribo GmbH",
+//                "+49 000 000 0000",
+//                "haribo@sweet.com",
+//                "android.resource://com.timbau3285.myinventory/drawable-xxxhdpi/fruit_salad");
+//        dbHelper.insertItem(fruitSalad);
+//
+//        StockItem smurfs = new StockItem(
+//                "Smurfs",
+//                "12 €",
+//                26,
+//                "Haribo GmbH",
+//                "+49 000 000 0000",
+//                "haribo@sweet.com",
+//                "android.resource://com.timbau3285.myinventory/drawable-xxxhdpi/smurfs");
+//        dbHelper.insertItem(smurfs);
+//
+//        StockItem fresquito = new StockItem(
+//                "Fresquito",
+//                "9 €",
+//                54,
+//                "Fiesta S.A.",
+//                "+34 000 000 0000",
+//                "fiesta@dulce.com",
+//                "android.resource://com.timbau3285.myinventory/drawable-xxxhdpi/fresquito");
+//        dbHelper.insertItem(fresquito);
+//
+//        StockItem hotChillies = new StockItem(
+//                "Hot chillies",
+//                "13 €",
+//                12,
+//                "Fiesta S.A.",
+//                "+34 000 000 0000",
+//                "fiesta@dulce.com",
+//                "android.resource://com.timbau3285.myinventory/drawable-xxxhdpi/hot_chillies");
+//        dbHelper.insertItem(hotChillies);
+//
+//        StockItem lolipopStrawberry = new StockItem(
+//                "Lolipop strawberry",
+//                "12 €",
+//                62,
+//                "Fiesta S.A.",
+//                "+34 000 000 0000",
+//                "fiesta@dulce.com",
+//                "android.resource://com.timbau3285.myinventory/drawable-xxxhdpi/lolipop");
+//        dbHelper.insertItem(lolipopStrawberry);
+//
+//        StockItem heartGummy = new StockItem(
+//                "Heart gummy jellies",
+//                "13 €",
+//                22,
+//                "Fiesta S.A.",
+//                "+34 000 000 0000",
+//                "fiesta@dulce.com",
+//                "android.resource://com.timbau3285.myinventory/drawable-xxxhdpi/heart_gummy");
+//        dbHelper.insertItem(heartGummy);
+//    }
 
 }
