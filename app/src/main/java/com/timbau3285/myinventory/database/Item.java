@@ -57,11 +57,7 @@ public class Item extends SQLiteOpenHelper {
             contentValues.put(COL3, fname);
             contentValues.put(COL4, password);
             long result = sqLiteDatabase.insert(TABLE_NAME, null, contentValues);
-            if (result == -1) {
-                return false;
-            } else {
-                return true;
-            }
+            return result != -1;
         } else {
             return false;
         }
